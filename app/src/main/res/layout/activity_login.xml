@@ -63,6 +63,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:drawableEnd="@drawable/ic_pass"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>

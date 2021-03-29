@@ -63,35 +63,30 @@ public class SignUp extends AppCompatActivity {
                         @Override
                         public void run() {
 
-                            try {
+                            String[] field = new String[3];
+                            field[0] = "username";
+                            field[1] = "password";
+                            field[2] = "email";
 
-                                String[] field = new String[3];
-                                field[0] = "username";
-                                field[1] = "password";
-                                field[2] = "email";
-
-                                String[] data = new String[3];
-                                data[0] = username;
-                                data[1] = password;
-                                data[2] = email;
-                                PutData putData = new PutData("http://192.168.1.35/LoginRegister/signup.php", "POST", field, data);//ip du pc/LoginRegister...
-                                if (putData.startPut()) {
-                                    if (putData.onComplete()) {
-                                        progressBar.setVisibility(View.GONE);
-                                        String result = putData.getResult();
-                                        if (result.equals("Sign Up Success")) {
-                                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(getApplicationContext(), Login.class);
-                                            startActivity(intent);
-                                            finish();
-                                        } else {
-                                            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        }
-
+                            String[] data = new String[3];
+                            data[0] = username;
+                            data[1] = password;
+                            data[2] = email;
+                            PutData putData = new PutData("http://192.168.1.35/LoginRegister/signup.php", "POST", field, data);//ip du pc/LoginRegister...
+                            if (putData.startPut()) {
+                                if (putData.onComplete()) {
+                                    progressBar.setVisibility(View.GONE);
+                                    String result = putData.getResult();
+                                    if (result.equals("Sign Up Success")) {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
                                     }
+
                                 }
-                            } catch (Exception e) {
-                                e.printStackTrace();
                             }
                         }
                     });
