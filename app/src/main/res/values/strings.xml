@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">QrCodeProject</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="signup">SignUp</string>
+    <string name="loginhere">Already have an account ? <u>Login</u></string>
+    <string name="signuphere">Create a new count ? <u>Sign Up</u></string>
+</resources>
